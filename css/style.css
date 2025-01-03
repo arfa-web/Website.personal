@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #010101;
+    color: white;
+    min-height: 2000px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 5%;
+    background-color: rgba(1, 1, 1, 0.8 );
+    border-bottom: 2px solid #513c28;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: #b6895b;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: #b6895b;
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #b6895b;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.7);
+}
+
+.navbar .navbar-extra a {
+    color: white;
+    margin: 0 0.5rem;
+}
+
+#EGG-menu {
+    display: none;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/tayam.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(1,1,3,1) 8%, rgba(255,255,255,0) 50%);
+}
+
+.hero .content {
+    padding: 1.4rem 5%;
+    max-width: 55rem;
+}
+
+
+.hero .content h1 {
+    font-size: 5em;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    line-height: 1.2;
+}
+
+.hero .content h1 span {
+    color: #b6895b;
+}
+
+.hero .content p {
+    font-size: 1.6rem;
+    color: #513c28;
+    margin-top: 0.7rem;
+    line-height: 1.4;
+    font-weight: 150;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+    margin-top: 0.7rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    background-color: #b6895b;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+}
+
+/* ABOUT SECTION */
+.about {
+    padding: 1.4rem 7%;
+}
+
+/* MEDIA QUERIES */
+/* LAPTOP */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+/* TABLET */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #EGG-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: white;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.5s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: black;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.2);
+    }
+}
+/* HEANDPHONE */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
